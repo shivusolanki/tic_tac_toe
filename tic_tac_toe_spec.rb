@@ -1,27 +1,25 @@
 require_relative "tic_tac_toe.rb"
 
-describe TicTacToe do 
-	it "initially board should be empty" 
-	
-	it "should have two players only" 
-	
-	it "players should have different token(X or O)" 
-	
-
-	describe "players take turn " do
-		it "alternative turn are valid(first player1 then 2nd should be player2)"
-		
-
-		it " one player have 2 consecutive turn should not be valid " 
-		
+describe Tic_Tac_Toe do
+  before(:each) do
+    @T = TicTacToe.new
+  end 
+	it "initially board should be empty" do
+		expect(@T.board.empty?).to be true
 	end
 
-	describe "choice player makes" do
-		it " player1 place their token to only one square " 
-		
+	it "should have two players only" do
+		expect(@T.no._of_player).to eql 2
+	end 
 
-		it " player2 place their token to only one square which is not filled by player1" 
+	describe "choice player makes" do
+		it " move should be valid "do
+		expect(@T.move_valid?).to be true
+		end 
 		
+		it " player2 place their token to only one square which is not filled by player1" do
+		expect(@T.position_taken?(6)).to be false 
+		end
 	end
 
 	describe " win" do
