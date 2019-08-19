@@ -10,13 +10,14 @@ class Game
 
 	def initialize
 		@board = Board.new
+		@player1 = Players.new('X')
+		@player2 = Players.new('O')
 	end
 
 	def start
-		puts "let the game begin"
-
-		@player1 = Player.new('X')
-		@player2 = Player.new('O')
+		puts
+		puts "***Let the game begin***"
+		puts
 
 		play
 		puts "\nGame over"
@@ -25,8 +26,8 @@ class Game
 	def play
 		board.board_state
 		until board.game_over?
-			player1.choose_spot(board)
-			player2.choose_spot(board) if !game_over?
+			player1.choose_spot(board, 'X')
+			player2.choose_spot(board, 'O') if !board.game_over?
 			board.board_state
 		end
 	end
