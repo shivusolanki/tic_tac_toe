@@ -22,15 +22,15 @@ class Board
 	end
 
 	def tie?
-		if (full && !won?)
+		if (full? && !won?)
 			true
 		else
 		 false
 		end
 	end
 
-	def full
-		spots.all? {|spot| spot == 'X' || spot == '0'}
+	def full?
+		spots.all? {|spot| spot == "X" || spot == "O"}
 	end
 				
 	def game_over?
@@ -52,6 +52,20 @@ class Board
 
 	def board_state
   	puts " #{spots[0]} | #{spots[1]} | #{spots[2]} \n===+===+===\n #{spots[3]} | #{spots[4]} | #{spots[5]} \n===+===+===\n #{spots[6]} | #{spots[7]} | #{spots[8]} \n\n"
+  end
+
+  def turn_count?
+  	counter = 0
+  	spots.each do |spaces|
+  		if spaces == "X" || spaces == "O"
+  			counter += 1
+  		end
+  	end
+  	counter
+  end
+
+  def player_win
+  	turn_count? % 2 == 0 ? "O" : "X"
   end
 end
 

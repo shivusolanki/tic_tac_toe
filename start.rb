@@ -1,3 +1,3 @@
-require_relative 'game.rb'
+require_relative 'src/game.rb'
 
 Game.start

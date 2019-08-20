@@ -20,8 +20,17 @@ class Game
 		puts
 
 		play
-		puts "\nGame over"
+
+		if board.won?
+	  	winner = board.player_win
+		  puts "player with token [ #{winner} ] is winner!!"
+			puts "\nGame Over"
+		else 
+			puts "Game is tie !!"
+			puts "\nGame Over"
+		end
 	end
+
 
 	def play
 		board.board_state
