@@ -31,7 +31,6 @@ class Game
 		end
 	end
 
-
 	def play
 		board.board_state
 		until board.game_over?

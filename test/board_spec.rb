@@ -6,7 +6,7 @@ describe Board do
   end  
 
   it "test board spots" do
-  expect(@b.spots).to match_array(['0','1','2','3','4','5','6','7','8'])
+    expect(@b.spots).to match_array(['0','1','2','3','4','5','6','7','8'])
   end 
 
   it "test board choose spot" do
@@ -19,7 +19,7 @@ describe Board do
     expect(@b.won?).to be false
     choose_3_spot(@b)
     expect(@b.won?).to be true
-    end 
+  end 
 
   it "test tie" do
     # skip
@@ -34,7 +34,6 @@ describe Board do
     choose_all_spots(@b)
     expect(@b.full?).to be true
   end
-
   
   it "test game over when one player won" do
     expect(@b.game_over?).to be false
@@ -42,7 +41,7 @@ describe Board do
     expect(@b.game_over?).to be true
   end
 
-   it "test game over when their is a tie" do
+  it "test game over when their is a tie" do
     # skip
     expect(@b.game_over?).to be false
     choose_all_spots(@b)

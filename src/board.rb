@@ -41,7 +41,6 @@ class Board
 		end
 	end
 
-
 	def chosen_spot?(spot)
 		spots[spot] == 'X' || spots[spot] == 'O'
 	end
@@ -68,5 +67,3 @@ class Board
   	turn_count? % 2 == 0 ? "O" : "X"
   end
 end
-
-
