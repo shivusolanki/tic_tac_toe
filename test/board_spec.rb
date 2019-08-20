@@ -21,18 +21,38 @@ describe Board do
     expect(@b.won?).to be true
   end 
 
-  it "test tie" do
+  it " test not won" do
     # skip
+    expect(@b.won?).to be false
+    choose_all_spots(@b)
+    expect(@b.won?).to be false
+  end
+
+
+  it "test tie" do
     expect(@b.tie?).to be false
     choose_all_spots(@b)
     expect(@b.tie?).to be true
   end
 
-  it "test full?" do
+  it "test not tie" do
     # skip
+    expect(@b.tie?).to be false
+    choose_3_spot(@b)
+    expect(@b.tie?).to be false
+  end
+
+  it "test full" do
     expect(@b.full?).to be false
     choose_all_spots(@b)
     expect(@b.full?).to be true
+  end
+
+  it "test not full" do
+    # skip
+    expect(@b.full?).to be false
+    choose_3_spot(@b)
+    expect(@b.full?).to be false
   end
   
   it "test game over when one player won" do
@@ -42,7 +62,6 @@ describe Board do
   end
 
   it "test game over when their is a tie" do
-    # skip
     expect(@b.game_over?).to be false
     choose_all_spots(@b)
     expect(@b.game_over?).to be true

@@ -5,7 +5,8 @@
 # 		@p = Players.new
 # 	end
 
-# 	it "test choose_spot" 
+# 	it "test choose_spot" do
+		
 		
 
 # 	it " test get_spot"
